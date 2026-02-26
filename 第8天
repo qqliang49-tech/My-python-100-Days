@@ -1,0 +1,65 @@
+import   进口 openai
+import   进口 os
+def ai_soul_curator():
+    print("🧠 AI 首席编辑正在读稿中...")
+    with open("raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt","r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r"   "r",encoding="utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8") as f:
+        content = f.read()
+    prompt = f""   """
+    你的账号风格是：温柔、治愈、能穿透深夜的脆弱，给难眠者以平静和启发。
+    
+    请从以下素材中，挑选出最能触动人心、最有画面感、且不落俗套的 3 句话。
+    
+    素材库:
+    {content}
+
+    输出要求：
+    1. 直接输出选中的句子。
+    2. 每句话后面附带一个简短的“治愈理由”。
+    ""   """
+    client = openai.OpenAI()
+    response = client.chat.completions.create(
+        model="gpt-4.1-mini",
+        messages=[{"role": "user", "content":prompt}]
+    )
+    result = response.choices[0].message.content
+    print("\n✨ AI 首席编辑精选的『深夜避风港』如下：\n")
+    print("-"*50)
+    print(result)
+    print("-"*50)
+    with open("soul_quotes.md","w",encoding="utf-8") as f:
+        f.write(f"# AI 首席编辑精选的『深夜避风港』\n\n{result}")
+if __name__ == "__main__":
+    ai_soul_curator()
+     
+import requests
+from bs4 import BeautifulSoup
+import time
+def stable_fetch_shadow():
+    print("正在启动||避风港||素材采集引擎...")
+    url = "https://wwww.meijuba.com/quotes/10750343/"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64 ) AppleWebkit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+    }
+    try:
+        response = requests.get(url,headers=headers, timeout=10)
+        response.encoding = "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.text, "html.parser")
+            items = soup.find_all("div", class_="content")
+            all_quotes = []
+            for item in   在 items:
+                text = item.text.strip()
+                if 20 < len(text) <150:
+                    all_quotes.append(text)
+            with open("raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt"   "raw_material.txt","w",encoding="utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8") as f:
+                for i, q in   在 enumerate(all_quotes, 1):
+                    f.write(f"素材{i}: {q}\n")
+            print(f"✅ 成功捕获 {len(all_quotes)} 条原始素材！")
+            print("📂 素材已存入 raw_material.txt，第一步圆满完成。")
+        else:
+            print(f"⚠️ 访问受阻，状态码：{response.status_code}")
+    except Exception as e:
+        print(f"❌ 抓取过程中发生错误：{e}")  
+if __name__ == "__main__":如果__name__ == "__main__"；
+    stable_fetch_shadow()
