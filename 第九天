@@ -1,0 +1,103 @@
+from gtts import   进口 gTTS
+import   进口 os   进口的
+def text_to_healing_voice():
+    print("🎙️ 正在为你的『深夜避风港』合成配音...")
+    text = "我只是想让你知道，在那些漫长的深夜里，总有个影子在默默守护着你，哪怕你从不回头。"
+    tts = gTTS(text=text, lang='zh-cn'   “应用”, slow=True)tts = gTTS（text=text, lang='zh-cn'   “应用”, slow=True）
+    filename = "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"
+    tts.save(filename)
+    print(f"✅ 配音合成成功！文件已存为：{filename}")
+    print("🎵 快去文件夹里双击打开听听看，那是你账号的第一声呢喃.")
+if   如果 __name__ == "__main__"   “__main__":如果__name__ == "__main__   “__main__""；
+    text_to_healing_voice()
+import   进口 json
+import   进口 os   进口的
+
+def generate_video_manifest():
+    print("📋 正在生成『深夜避风港』第一期视频制作清单...")
+    
+    # 1. 整理你的视频“零件”
+    video_data = {
+        "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title"   "title": "深夜避风港·第01期",
+        "concept": "关于深夜里的守护与光",
+        "script": {
+            "text": "我只是想让你知道，在那些漫长的深夜里，总有一个影子在默默守护着你，哪怕你从不回头。",
+            "audio_path": "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3"   "healing_voice.mp3",
+            "background_image": "video_assets/bg_3.jpg", # 假设你选了第3张
+            "font_style": "温柔宋体",
+            "bgm_suggestion": "安静的钢琴曲 (如: Luv Letter)"
+        },
+        "tags": ["#治愈系 #深夜避风港 #偷影子的人 #情感共鸣"]
+    }
+    
+    # 2. 保存为 JSON 格式（这是最专业的脚本管理方式）
+    with   与 open("video_manifest.json", "w", encoding="utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8"   "utf-8") as f:
+        json.dump(video_data, f, ensure_ascii=False, indent=4)
+    
+    print("\n✨ 恭喜！你的第一份视频脚本清单已生成：video_manifest.json")
+    print("📂 这个文件就是你未来自动化剪辑的『指挥官』。")
+
+if   如果 __name__ == "__main__"   “__main__":如果__name__ == "__main__   “__main__""；
+    generate_video_manifest()
+
+import   进口 requests   进口的请求
+import   进口 os   进口的
+import   进口 time   导入的时间
+
+def download_healing_images():
+    print("🎨 正在全球图库中为你寻找『治愈系』视觉素材...")
+    
+    # 1. 创建存储文件夹
+    save_dir = "video_assets"
+    if   如果 not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    
+    # 2. 设定搜索关键词
+    keywords = ["night-window", "starry-sky", "warm-light"]
+    
+    # 3. 循环下载
+    for   为 i, word in   在 enumerate(keywords, 1):
+        print(f"🔍 正在匹配关键词：{word}...")
+        
+        # ✅ 修正了 https 的拼写 ，并将分辨率的 * 改回了 x
+        image_url = f"https://source.unsplash.com/1600x900/?{word}"
+        
+        headers = {
+            "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent"   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64 ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+        }
+        
+        try   试一试:
+            # 下载图片
+            response = requests.get(image_url, headers=headers, timeout=20)
+            if   如果 response.status_code == 200:
+                file_path = os.path.join(save_dir, f"bg_{i}.jpg")
+                with   与 open(file_path, "wb") as f:
+                    f.write(response.content)
+                print(f"✅ 素材 {i} 下载成功：{file_path}")
+            else   其他:
+                print(f"⚠️ 素材 {i} 访问受阻，状态码：{response.statu{
+    "title": "深夜避风港·第01期",
+    "concept": "关于深夜里的守护与光",
+    "script": {
+        "text": "我只是想让你知道，在那些漫长的深夜里，总有一个影子在默默守护着你，哪怕你从不回头。",
+        "audio_path": "healing_voice.mp3",
+        "background_image": "video_assets/bg_3.jpg",
+        "font_style": "温柔宋体",
+        "bgm_suggestion": "安静的钢琴曲 (如: Luv Letter)"
+    },
+    "tags": [
+        "#治愈系 #深夜避风港 #偷影子的人 #情感共鸣"
+    ]
+}s_code}")
+            
+            # 礼貌等待 2 秒
+            time.sleep(2)
+            
+        except Exception as e:
+            print(f"❌ 素材 {i} 下载失败：{e}")
+
+    print(f"\n✨ 视觉素材搜集完毕！请在 {save_dir} 文件夹中查看。")
+    print("🖼️ 挑一张最能触动你的，作为我们视频的主背景。")
+
+if   如果 __name__ == "__main__"   “__main__":如果__name__ == "__main__   “__main__""；
+    download_healing_images()
