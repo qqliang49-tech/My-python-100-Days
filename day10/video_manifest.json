@@ -1,0 +1,16 @@
+{
+    "title": "深夜避风港 Ep01",
+    "text": "每个人的裂痕，最后都会变成阳光照进来的地方。",
+    "audio_path": "healing_voice.mp3",
+    "bg_image": "video_assets/bg_3.jpg",
+    "tags": [
+        "healing",
+        "midnight",
+        "haven"
+    ],
+    "style": {
+        "font_size": 50,
+        "color": "white",
+        "position": "center"
+    }
+}
